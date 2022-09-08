@@ -7,7 +7,7 @@ import reportWebVitals from "./reportWebVitals";
 import "bootstrap/dist/css/bootstrap.min.css";
 import storeInstance from "./store/configureStore";
 import { Provider } from "react-redux";
-
+import 'assets/scss/app.scss'
 
 const { store } = storeInstance;
 

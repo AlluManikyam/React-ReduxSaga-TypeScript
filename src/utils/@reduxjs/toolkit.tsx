@@ -1,4 +1,4 @@
-import { RootStateKeyType } from '../types/injector-typings'
+import { RootStateKeyType } from 'utils/types/injector-typings'
 import {
   createSlice as createSliceOriginal,
   SliceCaseReducers,

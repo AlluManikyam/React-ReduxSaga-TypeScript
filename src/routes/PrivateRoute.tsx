@@ -1,7 +1,7 @@
 import { Navigate } from "react-router-dom";
 // import { useSelector } from 'react-redux'
-import AccessDenied from "../components/AccessDenied";
-import { User, ROLE } from "../model/auth";
+import AccessDenied from "components/AccessDenied";
+import { User, ROLE } from "model/auth";
 // import { selectCurrentUser, selectIsAuthenticated } from './features/auth/authSlice'
 
 interface Props {
@@ -15,8 +15,8 @@ export const PrivateRoute: React.FC<Props> = ({
   roles,
 }) => {
   const user: User = {
-    first_name: "Manikyam",
-    last_name: "Allu",
+    firstName: "Manikyam",
+    lastName: "Allu",
     role: ROLE.ADMIN,
   }; //useSelector(selectCurrentUser)
   

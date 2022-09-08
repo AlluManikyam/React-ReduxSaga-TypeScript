@@ -1,7 +1,6 @@
 import React from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
-import "./Login.scss";
 
 const signInSchema = Yup.object().shape({
   email: Yup.string().email().required("Email is required"),

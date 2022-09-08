@@ -1,9 +1,9 @@
 import axios, { AxiosInstance } from 'axios'
-import { config } from '../api/variables'
-import { getLoggedInUser } from '../utils/helpers/authUtils'
+import { config } from 'api/variables'
+import { getLoggedInUser } from 'utils/helpers/authUtils'
 import { toast } from 'react-toastify'
-import storeInstance from '../store/configureStore'
-import { actions } from '../store/common/slice'
+import storeInstance from 'store/configureStore'
+import { actions } from 'store/common/slice'
 
 const baseAxios: AxiosInstance = axios.create({
   baseURL: `${config.baseUrl}`,

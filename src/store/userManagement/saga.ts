@@ -1,6 +1,6 @@
 // import { Cookies } from 'react-cookie'
-import { baseAxios } from '../../api/axios'
-import { apiEndPoints } from '../../api/variables'
+import { baseAxios } from 'api/axios'
+import { apiEndPoints } from 'api/variables'
 import { call, put, takeLatest, all } from 'redux-saga/effects'
 import { Cookies } from 'react-cookie'
 import {
@@ -11,7 +11,7 @@ import {
   updateUser,
   loginUser,
 } from './slice'
-import { message } from '../../utils/helpers/constants'
+import { message } from 'utils/helpers/constants'
 import { toast } from 'react-toastify'
 
 

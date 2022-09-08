@@ -4,7 +4,7 @@
 
 import { combineReducers } from '@reduxjs/toolkit'
 import { all, fork } from 'redux-saga/effects'
-import { InjectedReducersType } from '../utils/types/injector-typings'
+import { InjectedReducersType } from 'utils/types/injector-typings'
 import { reducer as common } from './common/slice'
 import { usersSaga } from './userManagement/saga'
 import { reducer as Users } from './userManagement/slice'

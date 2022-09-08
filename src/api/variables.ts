@@ -14,9 +14,7 @@ const apiEndPoints = {
   users: {
     login: `/users/login`,
     addUser: `/users/signup`,
-    addUserWithRole: `/users/assign-role`,
     userById: (id: string) => `/users/${id}`,
-    updateProfile: (userId: string) => `/users/${userId}/update`,
   },
 };
 

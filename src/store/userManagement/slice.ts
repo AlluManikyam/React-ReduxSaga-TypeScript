@@ -1,5 +1,5 @@
 import { PayloadAction, createAction } from '@reduxjs/toolkit'
-import { createSlice } from '../../utils/@reduxjs/toolkit'
+import { createSlice } from 'utils/@reduxjs/toolkit'
 import { Users } from './types'
 
 // eslint-disable-next-line

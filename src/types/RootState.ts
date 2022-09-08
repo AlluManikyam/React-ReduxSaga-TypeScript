@@ -1,7 +1,7 @@
 // [IMPORT NEW CONTAINERSTATE ABOVE] < Needed for generating containers seamlessly
 
-import { Users } from '../store/userManagement/types'
-import { CommonState } from '../store/common/types'
+import { Users } from 'store/userManagement/types'
+import { CommonState } from 'store/common/types'
 
 /* 
   Because the redux-injectors injects your reducers asynchronously somewhere in your code
