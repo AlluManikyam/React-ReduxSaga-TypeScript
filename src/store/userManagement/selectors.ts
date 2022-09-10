@@ -5,4 +5,4 @@ import { initialState } from './slice'
 
 const selectDomain = (state: RootState) => state.Users || initialState
 
-export const selectUsers = createSelector([selectDomain], Users => Users)
+export const userSelector = createSelector([selectDomain], Users => Users)

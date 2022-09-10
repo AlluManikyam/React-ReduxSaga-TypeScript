@@ -1,8 +1,7 @@
 import { Navigate } from "react-router-dom";
-// import { useSelector } from 'react-redux'
 import AccessDenied from "components/AccessDenied";
 import { User, ROLE } from "model/auth";
-// import { selectCurrentUser, selectIsAuthenticated } from './features/auth/authSlice'
+import { getLoggedInUser } from "utils/helpers/authUtils";
 
 interface Props {
   component: React.ComponentType;
@@ -17,10 +16,10 @@ export const PrivateRoute: React.FC<Props> = ({
   const user: User = {
     firstName: "Manikyam",
     lastName: "Allu",
-    role: ROLE.ADMIN,
-  }; //useSelector(selectCurrentUser)
+    role: ROLE.USER,
+  }; 
   
-  const isAuthenticated = true; //useSelector(selectIsAuthenticated)
+  const isAuthenticated = getLoggedInUser();
   const userHasRequiredRole = user && roles.includes(user.role) ? true : false;
   
   if (isAuthenticated && userHasRequiredRole) {

@@ -12,7 +12,7 @@ const deleteUser = createAction<any>('users/deleteUser')
 
 
 export const initialState: Users = {
-  users: {},
+  users: [],
   user: {},
   authUser: {},
   userInfo: {},
@@ -30,6 +30,9 @@ const UserSlice = createSlice({
     },
     setUser(state, action: PayloadAction<any>) {
       state.user = action.payload
+    },
+    setUsers(state, action: PayloadAction<any>) {
+      state.users = action.payload
     },
     setUserEmail(state, action: PayloadAction<any>) {
       state.userEmail = action.payload

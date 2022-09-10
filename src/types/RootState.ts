@@ -8,6 +8,6 @@ import { CommonState } from 'store/common/types'
   You have to declare them here manually
 */
 export interface RootState {
-  common: CommonState
+  Common: CommonState
   Users: Users
 }

@@ -4,18 +4,19 @@ import NotFound from "components/NotFound";
 import { ROLE } from "model/auth";
 import { PublicRoute } from "./PublicRoute";
 import { PrivateRoute } from "./PrivateRoute";
+import Loader from "components/Common/Loader";
 
 const LoginPage = React.lazy(() => import("containers/Auth/Login"));
+const DashboardPage = React.lazy(() => import("containers/Dashboard"));
 
-const Loading = () => <p>Loading ...</p>;
 
 const Main = () => {
   return (
-    <React.Suspense fallback={<Loading />}>
+    <React.Suspense fallback={<Loader />}>
       <Routes>
       <Route path="/" element={<PublicRoute  component={LoginPage} />} />
         <Route path="/login" element={<PublicRoute  component={LoginPage} />} />
-        <Route path="/home"  element={<PrivateRoute roles={[ROLE.ADMIN]} component={LoginPage} />} />
+        <Route path="/dashboard"  element={<PrivateRoute roles={[ROLE.USER]} component={DashboardPage} />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </React.Suspense>

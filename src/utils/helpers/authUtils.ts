@@ -1,33 +1,42 @@
 // @flow
-import jwtDecode from 'jwt-decode'
-import { Cookies } from 'react-cookie'
+import jwtDecode from "jwt-decode";
+import { Cookies } from "react-cookie";
 
 /**
  * Checks if user is authenticated
  */
 const isUserAuthenticated = () => {
-  const user = getLoggedInUser()
+  const user = getLoggedInUser();
   if (!user) {
-    return false
+    return false;
   }
-  const decoded:any = jwtDecode(user.jwt)
-  const currentTime = Date.now() / 1000
+  const decoded: any = jwtDecode(user.jwt);
+  const currentTime = Date.now() / 1000;
   if (decoded.exp < currentTime) {
-    console.warn('access token expired')
-    return false
+    console.warn("access token expired");
+    return false;
   } else {
-    return true
+    return true;
   }
-}
+};
 
 /**
  * Returns the logged in user
  */
 const getLoggedInUser = () => {
-  const cookies = new Cookies()
-  const user = cookies.get('user')
+  const cookies = new Cookies();
+  const user = cookies.get("user");
 
-  return user ? (typeof user == 'object' ? user : JSON.parse(user)) : null
-}
+  return user ? (typeof user == "object" ? user : JSON.parse(user)) : null;
+};
 
-export { isUserAuthenticated, getLoggedInUser }
+/**
+ * Returns the logged in user
+ */
+const getLoggedOutUser = () => {
+  const cookies = new Cookies();
+  cookies.remove("user");
+  window.location.href = "/";
+};
+
+export { isUserAuthenticated, getLoggedInUser, getLoggedOutUser };
