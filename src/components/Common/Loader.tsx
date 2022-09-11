@@ -7,8 +7,7 @@ const Loader = () => {
       <div className="preloader">
         <div className="status">
           <div
-            style={{ color: "#f13b49", fontWeight: "bold" }}
-            className="text-center"
+            className="loading-text text-center"
           >
             Loading...
           </div>

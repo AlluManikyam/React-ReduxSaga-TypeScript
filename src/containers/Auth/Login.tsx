@@ -2,8 +2,10 @@ import { useState } from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import { useDispatch } from "react-redux";
-import { loginUser } from "store/userManagement/slice";
 import { useNavigate } from "react-router-dom";
+
+// Store
+import { loginUser } from "store/userManagement/slice";
 
 const signInSchema = Yup.object().shape({
   email: Yup.string().email().required("Email is required"),
@@ -36,7 +38,7 @@ const SignInForm = () => {
         }}
       >
         {(formik) => {
-          const { errors, touched, isValid, dirty } = formik;
+          const { errors, touched } = formik;
           return (
             <div id="login-page">
               <div className="container">
@@ -80,8 +82,6 @@ const SignInForm = () => {
 
                   <button
                     type="submit"
-                    className={!(dirty && isValid) ? "disabled-btn" : ""}
-                    disabled={!(dirty && isValid)}
                   >
                     Sign In
                   </button>
