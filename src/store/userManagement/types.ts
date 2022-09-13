@@ -5,3 +5,8 @@ export interface Users {
   userInfo: any
   authUser: any
 }
+
+export interface IUserSign {
+  email: string
+  password: string
+}
